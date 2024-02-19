@@ -2,9 +2,19 @@ import openai
 import streamlit as st
 from google_oauth2_required import google_oauth2_required
 
+# 一応githubのicon消し（そこまでしなくてもいいかも？）
+hide_github_icon_style = """
+<style>
+#GithubIcon {visibility: hidden;}
+</style>
+"""
+
 # main
 @google_oauth2_required
 def main():
+    # github消しを呼び出す
+    st.markdown(hide_github_icon_style, unsafe_allow_html=True)
+
     with st.sidebar:
         st.title('🤖💬 OpenAI Chatbot')
         # 本番
