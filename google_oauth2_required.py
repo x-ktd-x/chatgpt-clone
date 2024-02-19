@@ -41,8 +41,8 @@ def google_oauth2_required(func):
             except:
                 st.write(
                     f"""<h1>
-                    認証お願いします🖖→ <a target="_self"
-                    href="{authorization_url}">インスタンス・ドミネーション！！！！</a></h1>""",
+                    認証お願いします！！<br>
+                    <a target="_self" href="{authorization_url}">インスタンス・ドミネーション！！！！🖖</a></h1>""",
                     unsafe_allow_html=True,
                 )
             else:
