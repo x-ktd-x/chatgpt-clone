@@ -41,8 +41,8 @@ def google_oauth2_required(func):
             except:
                 st.write(
                     f"""<h1>
-                    Please login using this <a target="_self"
-                    href="{authorization_url}">url</a></h1>""",
+                    認証お願いします🖖→ <a target="_self"
+                    href="{authorization_url}">インスタンス・ドミネーション！！！！</a></h1>""",
                     unsafe_allow_html=True,
                 )
             else:
@@ -52,9 +52,8 @@ def google_oauth2_required(func):
                 except:
                     st.write(
                         f"""<h1>
-                        This account is not allowed or page was refreshed.
-                        Please try again: <a target="_self"
-                        href="{authorization_url}">url</a></h1>""",
+                        すみません、アカウントが存在しないかもです🥺
+                        それかページリフレッシュして試してみてください🥺""",
                         unsafe_allow_html=True,
                     )
                 else:
@@ -63,9 +62,8 @@ def google_oauth2_required(func):
                         if token.is_expired():
                             st.write(
                                 f"""<h1>
-                            Login session has ended,
-                            please <a target="_self" href="{authorization_url}">
-                            login</a> again.</h1>
+                            セッション閉じちゃった🥺
+                            ページリフレッシュして試してみてください🥺
                             """,
                                 unsafe_allow_html=True,
                             )
