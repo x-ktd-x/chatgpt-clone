@@ -52,7 +52,7 @@ def google_oauth2_required(func):
                 except:
                     st.write(
                         f"""<h1>
-                        すみません、アカウントが存在しないかもです🥺
+                        すみません、アカウントが存在しないかもです🥺<br>
                         それかページリフレッシュして試してみてください🥺""",
                         unsafe_allow_html=True,
                     )
@@ -62,7 +62,7 @@ def google_oauth2_required(func):
                         if token.is_expired():
                             st.write(
                                 f"""<h1>
-                            セッション閉じちゃった🥺
+                            セッション閉じちゃったかも？🥺<br>
                             ページリフレッシュして試してみてください🥺
                             """,
                                 unsafe_allow_html=True,
