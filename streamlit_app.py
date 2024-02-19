@@ -11,12 +11,12 @@ hide_github_icon_style = """
 </style>
 """
 
+# github消しを呼び出す
+st.markdown(hide_github_icon_style, unsafe_allow_html=True)
+
 # main
 @google_oauth2_required
 def main():
-    # github消しを呼び出す
-    st.markdown(hide_github_icon_style, unsafe_allow_html=True)
-
     with st.sidebar:
         st.title('🤖💬 OpenAI Chatbot')
         # 本番
@@ -50,4 +50,13 @@ def main():
         st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 # メイン関数の実行
-main()
+if __name__ == "__main__":
+    # Check if the user is authenticated in session state
+    if 'authenticated' not in st.session_state:
+        st.session_state['authenticated'] = False
+
+    # Apply the CSS again if the user is authenticated (post OAuth)
+    if st.session_state['authenticated']:
+        st.markdown(hide_github_icon_style, unsafe_allow_html=True)
+
+    main()
