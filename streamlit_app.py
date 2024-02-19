@@ -5,7 +5,9 @@ from google_oauth2_required import google_oauth2_required
 # 一応githubのicon消し（そこまでしなくてもいいかも？）
 hide_github_icon_style = """
 <style>
-#GithubIcon {visibility: hidden;}
+[data-testid="stToolbarActions"] {
+    display: none !important;
+}
 </style>
 """
 
