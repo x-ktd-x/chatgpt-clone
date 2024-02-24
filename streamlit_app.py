@@ -18,10 +18,22 @@ st.markdown(hide_github_icon_style, unsafe_allow_html=True)
 @google_oauth2_required
 def main():
     with st.sidebar:
-        st.title('🤖💬 OpenAI Chatbot')
+        st.title(':ferry: SS GPT β版')
         # 本番
         if 'OPENAI_API_KEY' in st.secrets:
-            st.success('APIキーの取得に成功しました!', icon='✅')
+            st.markdown("""
+                    <style>
+                        .custom-success {
+                        color: #323232;
+                        background-color: #E5E5E5;
+                        padding: 10px;
+                        border-radius: 5px;
+                    }
+                    </style>
+                    <div class="custom-success">
+                        ⚓️ API key already provided! ⚓️
+                    </div>
+                    """, unsafe_allow_html=True)
             openai.api_key = st.secrets['OPENAI_API_KEY']
         else:
             st.warning('APIキーの取得に失敗しました', icon='⚠️')
